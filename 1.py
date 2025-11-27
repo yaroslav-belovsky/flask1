@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 import random as r
 from datetime import datetime
 
@@ -25,6 +25,27 @@ def home():
 @app.get('/info/')
 def info():
     return render_template("info.html")
+
+@app.get("/submit/")
+def get_submit():
+    return render_template("submit.html")
+
+@app.post("/submit/")
+def post_submit():
+    name = request.form.get("name")
+    age = request.form.get("age")
+    color = request.form.get("color")
+    return render_template("answer.html", name=name, age=age, color=color)
+
+@app.get("/spiderMan/")
+def spiderMan():
+    return render_template("spider-man.html")
+
+@app.get("/spiderMan/image")
+def spiderManImage():
+    return send_file('templates/marvels-spider-man-780x439.jpg', mimetype='image/png')
+
+
 if __name__ == '__main__':
 
     app.run(debug=True, port=5002)
