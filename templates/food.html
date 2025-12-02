@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>food</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body>
+<form method="post" action="/food_menu/">
+  <select name="type">
+
+  </select>
+<select name="type">
+  <option value="Сніданок">сніданок</option>
+  <option value="Обід">обід</option>
+  <option value="Вечеря">вечеря</option>
+  <option value="4">хочу все одразу</option>
+</select>
+  <select name="Complexity">
+  <option value="Легка">легка</option>
+  <option value="Середня">середня</option>
+  <option value="Складна">складна</option>
+  <option value="4">хочу все одразу</option>
+</select>
+<button type="submit" name="action" class="btn btn-success">вибрати</button>
+</form><br>
+{% for foods in food %}
+{foods[""]}
+{% endfor %}
+
+</body>
+</html>

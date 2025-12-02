@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body>
+{% for item in books %}
+<div class="card" style="width: 18rem;">
+  <img src="https://cdn.vectorstock.com/i/1000v/23/05/colorful-book-stacks-vector-48232305.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{item}}</h5>
+    <a href="#" class="btn btn-primary">придбати</a>
+  </div>
+</div>
+{% endfor %}
+</body>
+</html>
