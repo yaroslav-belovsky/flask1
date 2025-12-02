@@ -7,25 +7,22 @@
 </head>
 <body>
 <form method="post" action="/food_menu/">
-  <select name="type">
+  <div>Тип: <select name="type">
+{% for type_ in types %}
+    <option value="{{type_['value']}}" {% if type_['value'] == type_name %} selected {% endif %}>{{ type_['name'] }}</option>
+    {% endfor %}
+  </select></div>
+    <div>Складність: <select name="Complexity">
+{% for complexity_ in complexities %}
+    <option value="{{complexity_['value']}}" {% if complexity_['value'] == complexity %} selected {% endif %}>{{ complexity_['name'] }}</option>
+    {% endfor %}
+    </select></div>
 
-  </select>
-<select name="type">
-  <option value="Сніданок">сніданок</option>
-  <option value="Обід">обід</option>
-  <option value="Вечеря">вечеря</option>
-  <option value="4">хочу все одразу</option>
-</select>
-  <select name="Complexity">
-  <option value="Легка">легка</option>
-  <option value="Середня">середня</option>
-  <option value="Складна">складна</option>
-  <option value="4">хочу все одразу</option>
-</select>
 <button type="submit" name="action" class="btn btn-success">вибрати</button>
 </form><br>
-{% for foods in food %}
-{foods[""]}
+{% for food in selected %}
+<div>{{food["назва"]}}</div>
+
 {% endfor %}
 
 </body>

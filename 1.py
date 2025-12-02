@@ -195,7 +195,7 @@ def get_books():
 
 @app.get("/food_menu/")
 def food():
-    return render_template("food.html", types=types, Complexity=complexities)
+    return render_template("food.html", types=types, complexities=complexities)
 
 @app.post("/food_menu/")
 def food_menu():
@@ -203,10 +203,17 @@ def food_menu():
     complexity = request.form.get("Complexity")
     selected = []
     for food in food_list:
-        if complexity in food["складність"] and type_name in food["тип"]:
+        if (complexity in food["складність"] or complexity == '4') and (type_name in food["тип"] or type_name == '4'):
             selected.append(food)
-    print(selected)
-    return selected
+
+    return render_template(
+        "food.html",
+        types=types,
+        complexities=complexities,
+        type_name=type_name,
+        complexity=complexity,
+        selected=selected,
+    )
 
 if __name__ == '__main__':
 
