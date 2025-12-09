@@ -24,6 +24,10 @@
 <option value="km">Кілометри</option>
 <option value="inch">Дюйми</option>
 <option value="foot">Фути</option>
+    <option value="kg">клограми</option>
+    <option value="g">грами</option>
+    <option value="lb">фунт</option>
+    <option value="oz">унція</option>
 
 </select>
 
@@ -34,19 +38,23 @@
 <option value="km">Кілометри</option>
 <option value="inch">Дюйми</option>
 <option value="foot">Фути</option>
+    <option value="kg">клограми</option>
+    <option value="g">грами</option>
+    <option value="lb">фунт</option>
+    <option value="oz">унція</option>
 
 </select>
 
-<button type="submit">Конвертувати</button>
+<button type="submit" name="button">Конвертувати</button>
 
 </form>
 
 {% if result is not none %}
 
-<h3>Результат: {{ result }}</h3>
+<h3>Результат:<br>{{ result }}</h3>
 
 {% endif %}
-
+<button type="submit" name="button" value="add_fruit">дізнатися більше...</button>
 </div>
 
 </body>
