@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+</head>
+<body>
+<form method="post">
+<h3>{{namber}}</h3>
+{% for btn in range(1, 11)%}
+{% if btn == 4 %}
+    <button type="submit" name="action" value="*">*</button><br><button type="submit" name="action" value="{{ btn }}">{{ btn }}</button>
+{% elif btn == 7 %}
+    <button type="submit" name="action" value="/">/</button><br><button type="submit" name="action" value="{{ btn }}">{{ btn }}</button>
+{% elif btn == 10 %}
+    <button type="submit" name="action" value="+">+</button><br><button type="submit" name="action" value="-">-</button><button type="submit" name="action" value="0">0</button><button type="submit" name="action" value="=">=</button>
+{% else %}
+    <button type="submit" name="action" value="{{ btn }}">{{ btn }}</button>
+{% endif %}
+{% endfor %}
+</form>
+</body>
+</html>
